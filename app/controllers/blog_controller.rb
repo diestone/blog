@@ -1,16 +1,8 @@
 class BlogController < ApplicationController
      def index
-   #crear un registro
-registro = Mensaje.new
-registro.titulo = "Titular"
-registro.descripcion = "descripcion"
-registro.save
-
-
-     	#inicio listos para codear
-     	@mensaje = Mensaje.first
-
-
-        @cantidad = Mensaje.count
+     @mensajes = Mensaje.all
 end
+   def nuevo_mensaje
+   	   @mensaje = Mensaje.new
+   end
 end

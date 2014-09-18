@@ -1,5 +1,20 @@
-<h1>Fotoblog (<%= @cantidad%>)</h1>
-<p> Bienvenido a mi primer proyecto hecho en Ruby on Rails</p>
+<h1>Fotoblog (<%= @mensajes.size%>)</h1>
 
-<%= @mensaje.titulo %> <br>
-<%= @mensaje.descripcion %> <br>
+<%= link_to 'Nuevo mensaje', :action => 'nuevo_mensaje'%>
+<table border ="1">
+  <tr>
+      <th> Id/</th>
+      <th>Titulo</th>
+      <th>Descripcion</th>
+</tr>
+<% for mensaje in @mensajes %>
+ <tr>
+      <td> <%= mensaje.id %> </td>
+      <td><%= mensaje.titulo %></td>
+      <td><%= mensaje.descripcion %></td>
+</tr>
+ <%end%>
+
+
+</table>
+

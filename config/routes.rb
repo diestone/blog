@@ -6,7 +6,14 @@ Rails.application.routes.draw do
   root 'blog#index'
 
   # Example of regular route:
+    #acceden
     get 'blog' => 'blog#index'
+    get 'blog/nuevo_mensaje' => 'blog#nuevo_mensaje'
+   
+    
+    #Reciben
+     post 'blog/guardar_mensaje' => 'blog#guardar_mensaje'
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
