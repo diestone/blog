@@ -8,6 +8,11 @@
 </head>
 <body>
 
+<%if flash[:aviso]%>
+     <h4><%= flash[:aviso]%></h4>
+<%end%>
+
+
 <%= yield %>
 
 </body>
