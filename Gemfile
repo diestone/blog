@@ -41,3 +41,9 @@ gem 'spring',        group: :development
 gem 'faker'
 ## Paginador de datos
 gem 'will_paginate', '~> 3.0'
+
+## Manejador de archivos adjuntos
+gem 'carrierwave'
+
+## Procesador de imagenes
+gem 'mini_magick'

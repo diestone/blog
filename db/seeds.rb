@@ -1,4 +1,4 @@
-10000.times do
+10.times do
 mensaje = Mensaje.new
 mensaje.titulo = Faker::Lorem.sentence
 mensaje.descripcion = Faker::Lorem.paragraph

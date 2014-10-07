@@ -1,8 +1,7 @@
 
-
 <h1>Nuevo Mensaje</h1>
 
-<%= form_tag :action => 'guardar_mensaje' do%>
+<%= form_tag({:action => :guardar_mensaje}, :multipart => true) do%>
 
      <label for ='mensaje_titulo'>Titulo<label>
      <br/>
@@ -13,6 +12,12 @@
      <br/>
      <%= text_area 'mensaje', 'descripcion'%>
      <br/>
-     <%= submit_tag 'Enviar'%>
+     
+     <label for ='mensaje_imagen'>Imagen<label>
+     <br/>
+     <%= file_field 'mensaje', 'imagen'%>
+     <br/>
+
+     <%= submit_tag 'Guardar'%>
 
 <%end%>

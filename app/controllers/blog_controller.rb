@@ -29,7 +29,7 @@ end
 
 private
     def mensaje_params
-	params.require(:mensaje).permit(:titulo, :descripcion)
+	params.require(:mensaje).permit(:titulo, :descripcion, :imagen)
     end
 
 end
