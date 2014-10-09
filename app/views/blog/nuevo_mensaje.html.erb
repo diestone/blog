@@ -15,7 +15,7 @@
      
      <label for ='mensaje_imagen'>Imagen<label>
      <br/>
-     <%= file_field 'mensaje', 'imagen'%>
+     <%= file_field 'mensaje', 'imagen', accept: 'image/jpg, image/gif, image/jpeg, image/png'%>
      <br/>
 
      <%= submit_tag 'Guardar'%>

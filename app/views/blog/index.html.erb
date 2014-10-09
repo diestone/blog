@@ -6,12 +6,14 @@
       <th> Id/</th>
       <th>Titulo</th>
       <th>Descripcion</th>
+      <th>Imagen</th>
 </tr>
 <% for mensaje in @mensajes %>
  <tr>
       <td> <%= mensaje.id %> </td>
       <td><%= mensaje.titulo %></td>
       <td><%= mensaje.descripcion %></td>
+      <td><%= image_tag mensaje.imagen.thumb.url %></td>
 </tr>
  <%end%>
 
