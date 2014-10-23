@@ -47,3 +47,7 @@ gem 'carrierwave'
 
 ## Procesador de imagenes
 gem 'mini_magick'
+
+gem 'foundation-rails'
+
+gem 'puma'
