@@ -29,7 +29,7 @@
    <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">Blog</a></h1>
+      <h1><%= link_to 'Blog', action:  :index %></h1>
     </li>
     
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -37,7 +37,7 @@
   <section class="top-bar-section">
     
      <ul class="left">
-        <li><a href="#">Nuevo Mensaje</a></li>
+        <li><%= link_to 'Nuevo Mensaje', action:  :nuevo_mensaje %></li>
       </ul>
  
     <ul class="right">

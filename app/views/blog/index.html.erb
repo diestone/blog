@@ -1,25 +1,42 @@
-<h1>Fotoblog de Rene Arreola (<%= @cantidadMensajes%>)</h1>
+<label id="nuevo", class='nuevo'>(<%= @cantidadMensajes %>)</label>
 
-<%= link_to 'Nuevo mensaje', :action => 'nuevo_mensaje'%>
 
-<%= will_paginate @mensajes %>
+<label id="liga"><%= link_to 'Nuevo_mensaje', :action => 'nuevo_mensaje'%></label><br/>
+
+<div class="row">
+  
 
 <% for mensaje in @mensajes %>
 <div class="medium-2 columns fondo">
-	<p>
-          <%= mensaje.titulo %>
+	<p class="titulo">
+          <%= mensaje.titulo.upcase %>
 	</p>
-	<label>
-		<%= mensaje.descripcion %>
+	<label class="text-center imagen">
+		<%= image_tag mensaje.imagen.thumb.url %>
 	</label>
-	<label>
-		 <%= image_tag mensaje.imagen.thumb.url %>
+	
+	<label class="text-center descripcion">
+		<%= mensaje.descripcion.capitalize.at(0..20)+ "..."%> 
 	</label>
-	<label>
+	
+	<label class="text-right fecha">
 		  <%= mensaje.created_at.strftime("%X %p")%>
-     <%= mensaje.id %>
+     
      </label>
     
  </div>
  <%end%>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
 
