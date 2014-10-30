@@ -2,6 +2,7 @@ class BlogController < ApplicationController
 def index
      @mensajes = Mensaje.paginate(:page => params[:page], :per_page => 30)
      @cantidadMensajes = Mensaje.count
+    
 end
 def nuevo_mensaje
    	   @mensaje = Mensaje.new
@@ -14,12 +15,12 @@ def guardar_mensaje
 	#guardamos mensaje en BD
     #condiciones para evaluar si se cumplen las valdaciones
     if @mensaje.save
-         flash[:aviso] = "Mensaje guardado con exito"
+         flash[:notice] = "Mensaje guardado con exito"
 
          #todas las validaciones se cumplieron y se guarda en la BD
         redirect_to :action => 'index'
     else
-        flash[:aviso] = "Error favor de verificar los datos"
+        flash[:notice] = "Error favor de verificar los datos"
 
           #no se cumplieron todas las validaciones y se regresa el usuario al formulario
         render :action => 'nuevo_mensaje'
@@ -35,12 +36,12 @@ def crear_usuario
     @usuario = Usuario.new(usuario_params)
  
     if @usuario.save
-         flash[:aviso] = "Bienvenido: #{@usuario.nombre}"
+         flash[:notice] = "Bienvenido: #{@usuario.nombre}"
 
          #todas las validaciones se cumplieron y se guarda en la BD
         redirect_to :action => 'nuevo_mensaje'
     else
-        flash[:aviso] = "Error favor de verificar los datos"
+        flash[:notice] = "Error favor de verificar los datos"
 
           #no se cumplieron todas las validaciones y se regresa el usuario al formulario
         render :action => 'registro'

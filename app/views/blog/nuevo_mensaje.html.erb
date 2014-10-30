@@ -1,23 +1,25 @@
-
-<h1>Nuevo Mensaje</h1>
-
-<%= form_tag({:action => :guardar_mensaje}, :multipart => true) do%>
-
-     <label for ='mensaje_titulo'>Titulo<label>
-     <br/>
-     <%= text_field 'mensaje', 'titulo'%>
-
- <br/>
-     <label for ='mensaje_descripcion'>Descripcion<label>
-     <br/>
-     <%= text_area 'mensaje', 'descripcion'%>
-     <br/>
-     
-     <label for ='mensaje_imagen'>Imagen<label>
-     <br/>
-     <%= file_field 'mensaje', 'imagen', accept: 'image/jpg, image/gif, image/jpeg, image/png'%>
-     <br/>
-
-     <%= submit_tag 'Guardar'%>
-
+<% if flash[:notice] %>
+   <div id="myModal" class="reveal-modal" data-reveal>
+  <div class ="notice"><%= flash[:notice] %></div>
+   <a class="close-reveal-modal">&#215;</a>
+  </div>
 <%end%>
+
+
+
+<%=form_tag({:action => :guardar_mensaje}, :multipart => true) do%>
+<div class="row">
+          <div class="large-6 text-left columns ">
+                <div class="large-6 columns">
+                <h3>Nuevo Mensaje</h3>
+                     <%= text_field 'mensaje', 'titulo', :placeholder => "Titulo" %>
+                     <%= text_area 'mensaje', 'descripcion', :placeholder => "Descripcion" %>
+                     <%= file_field 'mensaje', 'imagen', accept: 'image/png,image/gif,image/jpeg' %>
+                     <%= submit_tag 'Guardar', :class => "button [radius round]" %>
+               </div>
+            <%end%>
+        </div>
+
+</div>
+
+

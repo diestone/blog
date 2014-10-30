@@ -1,42 +1,30 @@
-<label id="nuevo", class='nuevo'>(<%= @cantidadMensajes %>)</label>
+<% if flash[:notice] %>
+   <div id="myModal" class="reveal-modal" data-reveal>
+  <div class ="notice"><%= flash[:notice] %></div>
+   <a class="close-reveal-modal">&#215;</a>
+  </div>
+<%end%>
 
-
-<label id="liga"><%= link_to 'Nuevo_mensaje', :action => 'nuevo_mensaje'%></label><br/>
+<label id="nuevo",class="nuevo">(<%= @cantidadMensajes %>)</label>
 
 <div class="row">
-  
-
 <% for mensaje in @mensajes %>
-<div class="medium-2 columns fondo">
-	<p class="titulo">
-          <%= mensaje.titulo.upcase %>
-	</p>
-	<label class="text-center imagen">
-		<%= image_tag mensaje.imagen.thumb.url %>
-	</label>
-	
-	<label class="text-center descripcion">
-		<%= mensaje.descripcion.capitalize.at(0..20)+ "..."%> 
-	</label>
-	
-	<label class="text-right fecha">
-		  <%= mensaje.created_at.strftime("%X %p")%>
-     
-     </label>
-    
- </div>
- <%end%>
-
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
+		<div class="medium-3 columns ">
+			<div class="fondo">
+				<p class="titulo">
+					<%= mensaje.titulo.upcase.at(0..11) %>
+				</p>
+				<label class="text-center imagen">
+					<%= image_tag mensaje.imagen.thumb.url %>
+				</label>
+				<label class="small-12 columns text-center descripcion">
+					<%= mensaje.descripcion.capitalize.at(0..9)+ "..."%>
+				</label>
+				<label class="text-right fecha">
+					<%= mensaje.created_at.strftime("%X %p")%>
+				</label>
+			</div>
+		</div>
+	<% end %>
+</div>
+<label class="titulo"><%= will_paginate @mensajes %><label>
