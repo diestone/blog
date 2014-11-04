@@ -20,9 +20,13 @@
 				<label class="small-12 columns text-center descripcion">
 					<%= mensaje.descripcion.capitalize.at(0..9)+ "..."%>
 				</label>
+				
 				<label class="text-right fecha">
+                    <%= mensaje.usuario.nombre %>
+                    <%= mensaje.usuario.email %>
 					<%= mensaje.created_at.strftime("%X %p")%>
 				</label>
+			
 			</div>
 		</div>
 	<% end %>

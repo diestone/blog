@@ -12,9 +12,11 @@ def guardar_mensaje
 	#inicializamos el objeto y recibimos y asignamos datos
 	@mensaje = Mensaje.new(mensaje_params)
  
+    usuario = Usuario.find(session[:usuario])
+
 	#guardamos mensaje en BD
     #condiciones para evaluar si se cumplen las valdaciones
-    if @mensaje.save
+    if usuario.mensajes << @mensaje
          flash[:notice] = "Mensaje guardado con exito"
 
          #todas las validaciones se cumplieron y se guarda en la BD
@@ -34,9 +36,12 @@ end
 
 def crear_usuario
     @usuario = Usuario.new(usuario_params)
- 
+     
     if @usuario.save
          flash[:notice] = "Bienvenido: #{@usuario.nombre}"
+
+        session[:usuario] = @usuario.id
+
 
          #todas las validaciones se cumplieron y se guarda en la BD
         redirect_to :action => 'nuevo_mensaje'
