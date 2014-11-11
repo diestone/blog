@@ -1,4 +1,32 @@
 class BlogController < ApplicationController
+
+def login
+       if request.post?
+         @usuario = Usuario.find_by_email(params[:usuario][:email])
+         if @usuario && @usuario.authenticate(params[:usuario][:password])
+          #usuario valido
+          session[:usuario] = @usuario.id
+          redirect_to :action => 'nuevo_mensaje'
+         else
+         flash[:notice] = "Email y/o password incorrecto"
+         render :action => 'login'
+            #usuario invalido
+         end
+
+
+
+       else
+         @usuario = Usuario.new
+     end
+ end
+
+
+
+
+
+
+
+
 def index
      @mensajes = Mensaje.paginate(:page => params[:page], :per_page => 30)
      @cantidadMensajes = Mensaje.count

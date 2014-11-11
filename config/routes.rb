@@ -7,10 +7,11 @@ Rails.application.routes.draw do
 
   # Example of regular route:
     #acceden
+    
     get 'blog' => 'blog#index'
     get 'blog/nuevo_mensaje' => 'blog#nuevo_mensaje'
     get 'blog/registro' => 'blog#registro'
-
+    get 'blog/login' => 'blog#login'
     
     #Reciben
      post 'blog/guardar_mensaje' => 'blog#guardar_mensaje'
