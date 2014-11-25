@@ -1,20 +1,19 @@
-<h1>Reg&iacute;strate:</h1>
-<%=form_tag :action => :crear_usuario do%>
-<p>
-	 <label for ='usuario_nombre'>Nombre<label>
-     <br/>
-     <%= text_field 'usuario', 'nombre'%>
 
- <br/>
-     <label for ='usuario_email'>Email<label>
-     <br/>
-     <%= text_area 'usuario', 'email'%>
-     <br/>
-     
-  
-     <%= submit_tag 'Guardar'%>
+<%=form_tag({:action => :crear_usuario}, :multipart => true) do%>
+<div class="row">
+          <div class="large-6 text-left columns ">
+                <div class="large-6 columns">
+                <h3>Registro</h3>
+                     <%= text_field 'usuario', 'nombre', :placeholder => "Nombre" %>
+                     <%= text_area 'usuario', 'email', :placeholder => "Email" %>
+                     <%= submit_tag 'Guardar', :class => "button [radius round]" %>
+               </div>
+            <%end%>
+        </div>
 
-<%end%>
+</div>
+
+
 
 
 
