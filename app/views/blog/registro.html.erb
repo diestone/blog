@@ -1,17 +1,16 @@
 
 <%=form_tag({:action => :crear_usuario}, :multipart => true) do%>
-<div class="row">
-          <div class="large-6 text-left columns ">
-                <div class="large-6 columns">
+ <div class="row">
+          <div class="large-3 text-left columns ">
                 <h3>Registro</h3>
                      <%= text_field 'usuario', 'nombre', :placeholder => "Nombre" %>
                      <%= text_area 'usuario', 'email', :placeholder => "Email" %>
                      <%= submit_tag 'Guardar', :class => "button [radius round]" %>
-               </div>
-            <%end%>
-        </div>
+          </div>
+ </div>            
+<%end%>
+       
 
-</div>
 
 
 
