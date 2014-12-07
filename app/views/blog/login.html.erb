@@ -1,17 +1,10 @@
-<h1>Login:</h1>
-<%=form_tag :action => :login do%>
-<p>
-	 <label for ='usuario_email'>Nombre<label>
-     <br/>
-     <%= text_field 'usuario', 'email'%>
-
- <br/>
-     <label for ='usuario_password'>Password<label>
-     <br/>
-     <%= password_field 'usuario', 'password'%>
-     <br/>
-     
-  
-     <%= submit_tag 'Login'%>
-
-<%end%>
+<%=form_tag({:action => :login}, :multipart => true) do%>
+ <div class="row">
+          <div class="large-3 text-left columns ">
+                <h3>Login</h3>
+                    <%= text_field 'usuario', 'email', :placeholder => "Correo-e" %>
+                    <%= text_field 'usuario', 'password', :placeholder => "Password" %>
+                     <%= submit_tag 'Login', :class => "button [radius round]" %>
+          </div>
+ </div>            
+  <%end%>
