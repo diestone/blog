@@ -52,3 +52,6 @@ gem 'foundation-rails'
 
 gem 'puma'
 
+gem 'activeadmin', github: 'activeadmin'
+
+gem 'devise'
