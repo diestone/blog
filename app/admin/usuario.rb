@@ -1,11 +1,12 @@
 ActiveAdmin.register Usuario do
 index do
-#permit_params :nombre, :email
-
+column :id
 column :nombre
 column "Correo-e", :email
-  
+end  
 
+
+#permit_params :nombre, :email
 
 
 
@@ -23,6 +24,5 @@ column "Correo-e", :email
   # end
 
 
-end
 end
 
