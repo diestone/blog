@@ -5,6 +5,9 @@
                 <h3>Registro</h3>
                      <%= text_field 'usuario', 'nombre', :placeholder => "Nombre" %>
                      <%= text_area 'usuario', 'email', :placeholder => "Email" %>
+                     
+
+                     <%= file_field 'usuario', 'imagen', accept: 'image/png,image/gif,image/jpeg' %>
                      <%= submit_tag 'Guardar', :class => "button [radius round]" %>
           </div>
  </div>            

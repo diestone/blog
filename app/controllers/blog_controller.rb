@@ -2,7 +2,7 @@ class BlogController < ApplicationController
 
 def login
        if request.post?
-         @usuario = Usuario.find_by_email(params[:usuario][:email])
+         @usuario = Usuario.find_by_email(params[:usuario][:email][:imagen])
          if @usuario && @usuario.authenticate(params[:usuario][:password])
           #usuario valido
           session[:usuario] = @usuario.id
@@ -19,11 +19,6 @@ def login
          @usuario = Usuario.new
      end
  end
-
-
-
-
-
 
 
 
@@ -67,7 +62,6 @@ def crear_usuario
      
     if @usuario.save
          flash[:notice] = "Bienvenido: #{@usuario.nombre}"
-
         session[:usuario] = @usuario.id
 
 
@@ -88,6 +82,6 @@ private
 	params.require(:mensaje).permit(:titulo, :descripcion, :imagen)
     end
 def usuario_params
-    params.require(:usuario).permit(:nombre, :email)
+    params.require(:usuario).permit(:nombre, :email, :imagen)
     end
 end

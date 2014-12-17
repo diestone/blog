@@ -5,7 +5,11 @@
   </div>
 <%end%>
 
+
 <label id="nuevo",class="nuevo">(<%= @cantidadMensajes %>)</label>
+
+
+
 
 <div class="row">
 <% for mensaje in @mensajes %>
@@ -24,6 +28,7 @@
 				<label class="text-right fecha">
                     <%= mensaje.usuario.nombre %>
                     <%= mensaje.usuario.email %>
+                    <%= image_tag mensaje.usuario.imagen.thumb.url %>
 					<%= mensaje.created_at.strftime("%X %p")%>
 				</label>
 			
