@@ -2,7 +2,7 @@ class BlogController < ApplicationController
 
 def login
        if request.post?
-         @usuario = Usuario.find_by_email(params[:usuario][:email][:imagen])
+         @usuario = Usuario.find_by_email(params[:usuario][:email][:userpic])
          if @usuario && @usuario.authenticate(params[:usuario][:password])
           #usuario valido
           session[:usuario] = @usuario.id
@@ -82,6 +82,6 @@ private
 	params.require(:mensaje).permit(:titulo, :descripcion, :imagen)
     end
 def usuario_params
-    params.require(:usuario).permit(:nombre, :email, :imagen)
+    params.require(:usuario).permit(:nombre, :email, :imagen, :userpic)
     end
 end

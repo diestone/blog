@@ -7,7 +7,7 @@
 
 
 <label id="nuevo",class="nuevo">(<%= @cantidadMensajes %>)</label>
-
+  
 
 
 
@@ -26,9 +26,10 @@
 				</label>
 				
 				<label class="text-right fecha">
+                    <%= image_tag mensaje.usuario.userpic.thumb.url %>
                     <%= mensaje.usuario.nombre %>
                     <%= mensaje.usuario.email %>
-                    <%= image_tag mensaje.usuario.imagen.thumb.url %>
+                
 					<%= mensaje.created_at.strftime("%X %p")%>
 				</label>
 			
